@@ -39,5 +39,32 @@ script:
 - curl http://localhost/test.php
 
 after_script:
+- echo " ===========    /etc/apache2/conf-available    ============"
+- sudo ls -all /etc/apache2/conf-available
+
+- echo " ===========    /etc/apache2/sites-available    ============"
+- sudo ls -all /etc/apache2/sites-available
+
+- echo " ===========    /etc/apache2/mods-enabled    ============"
+- sudo ls -all /etc/apache2/mods-enabled
+
+- echo " ===========    ls -l /etc/apache2/sites-enabled/    ============"
+- sudo ls -l /etc/apache2/sites-enabled/
+
+- echo " ===========    ls -l /etc/apache2/sites-enabled/    ============"
+- sudo ls -l /usr/lib/cgi-bin
+
+- echo " ===========    /etc/apache2/sites-available/000-default.conf    ============"
+- sudo cat /etc/apache2/sites-available/000-default.conf
+
+- echo " ===========    sudo netstat -antp | grep 9000    ============"
+- sudo netstat -antp | grep 9000
+
+- echo " ===========    /etc/apache2/apache2.conf    ============"
+- sudo cat /etc/apache2/apache2.conf
+
+- echo " ===========    /etc/apache2/conf-available/php5-fpm.conf   ============"
+- sudo cat /etc/apache2/conf-available/php5-fpm.conf
+
 - sudo cat /var/log/apache2/error.log
 - sudo cat /var/log/apache2/access.log

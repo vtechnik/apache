@@ -59,6 +59,12 @@ after_script:
 - echo " ===========    ls -l /usr/lib/cgi-bin    ============"
 - sudo ls -l /usr/lib/cgi-bin
 
+- echo " ===========    ls -l /usr/lib/apache2/modules    ============"
+- sudo ls -l /usr/lib/apache2/modules
+
+- echo " ===========    ls -l /usr/lib/apache2    ============"
+- sudo ls -l /usr/lib/apache2
+
 - echo " ===========    ls -l /var/lib/apache2    ============"
 - sudo ls -l /var/lib/apache2
 

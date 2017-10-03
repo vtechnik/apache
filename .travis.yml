@@ -29,6 +29,7 @@ before_script:
   - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   #- sudo chmod 777 /var/lib/apache2/fastcgi
   #- sudo sed -i -e "s,www-data,travis,g" /etc/apache2/envvars
+  - sudo chown travis:travis /var/lib/apache2/fastcgi
   - sudo adduser travis www-data
   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
   # configure apache virtual hosts
@@ -72,6 +73,9 @@ after_script:
 
 - echo " ===========    /etc/apache2/apache2.conf    ============"
 - sudo cat /etc/apache2/apache2.conf
+
+- echo " ===========    /etc/apache2/envvars    ============"
+- sudo cat /etc/apache2/envvars
 
 - echo " ===========    /etc/apache2/conf-available/php5-fpm.conf   ============"
 - sudo cat /etc/apache2/conf-available/php5-fpm.conf

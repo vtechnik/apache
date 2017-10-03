@@ -64,6 +64,9 @@ after_script:
 - echo " ===========    sudo netstat -antp | grep 9000    ============"
 - sudo netstat -antp | grep 9000
 
+- echo " ===========    /etc/apache2/mods-enabled/fastcgi.conf    ============"
+- sudo cat /etc/apache2/mods-enabled/fastcgi.conf
+
 - echo " ===========    /etc/apache2/apache2.conf    ============"
 - sudo cat /etc/apache2/apache2.conf
 

@@ -7,10 +7,6 @@ language: php
 php:
   - 7.0
   
-addons:
-  hosts:
-    - localtest
-    
 matrix:
   fast_finish: true
     
@@ -34,15 +30,13 @@ before_script:
   - sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/000-default.conf
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
   - sudo service apache2 restart
-
-
+  
 script:
 - sudo chmod -R 777 /home/travis/build/YetiForceCompany/apache
 - curl http://127.0.0.1/test.php
 - curl http://localhost/test.php
 - curl http://localhost/test.php?tttt=6666
 - curl http://localhost/test.php?tttt=ccccc
-
 
 after_script:
 - echo " ===========    /etc/apache2/conf-available    ============"

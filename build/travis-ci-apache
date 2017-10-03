@@ -17,7 +17,7 @@
     FastCgiExternalServer /usr/lib/cgi-bin/php5-fcgi -host 127.0.0.1:9000 -pass-header Authorization
     
     
-    <Directory /usr/lib/cgi-bin/php5-fcgi>
+    <Directory /usr/lib/cgi-bin>
         Require all granted
     </Directory>
   </IfModule>

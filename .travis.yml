@@ -30,7 +30,6 @@ before_script:
   - sudo chmod -R 777 /var/lib/apache2/fastcgi
   - sudo sed -i -e "s,www-data,travis,g" /etc/apache2/envvars
   - sudo chown -R travis:travis /var/lib/apache2/fastcgi
-  - sudo adduser travis www-data
   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
   # configure apache virtual hosts
   - sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/000-default.conf
